@@ -1,59 +1,59 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 
-const Appointment = props => (
+const Temp = props => (
   <tr>
 
-    <td>{props.appointment.refno}</td>
-    <td>{props.appointment.fileno}</td>
-    <td>{props.appointment.projcode}</td>
-    <td>{props.appointment.cuscode}</td>
-    <td>{props.appointment.name}</td>
-    <td>{props.appointment.priverteaddr}</td>
-    <td>{props.appointment.premisesaddr}</td>
-    <td>{props.appointment.extent}</td>
-    <td>{props.appointment.planno}</td>
-    <td>{props.appointment.lotno}</td>
-    <td>{props.appointment.dateofallocation}</td>
-    <td>{props.appointment.handedoverdate}</td>
-    <td>{props.appointment.periodofallocation}</td>
-    <td>{props.appointment.expdate}</td>
-    <td>{props.appointment.rent}</td>
-    <td>{props.appointment.taxes}</td>
+    <td>{props.temp.refno}</td>
+    <td>{props.temp.fileno}</td>
+    <td>{props.temp.projcode}</td>
+    <td>{props.temp.cuscode}</td>
+    <td>{props.temp.name}</td>
+    <td>{props.temp.priverteaddr}</td>
+    <td>{props.temp.premisesaddr}</td>
+    <td>{props.temp.extent}</td>
+    <td>{props.temp.planno}</td>
+    <td>{props.temp.lotno}</td>
+    <td>{props.temp.dateofallocation}</td>
+    <td>{props.temp.handedoverdate}</td>
+    <td>{props.temp.periodofallocation}</td>
+    <td>{props.temp.expdate}</td>
+    <td>{props.temp.rent}</td>
+    <td>{props.temp.taxes}</td>
     <td>
-    <a href={"/edit/"+props.appointment._id}
+    <a href={"/edit/"+props.temp._id}
    class="btn btn-warning" id="delete">
       <i class="fas fa-edit">&nbsp;Edit</i></a>
       &nbsp;
   
-    <a href="#" onClick={() => { props.deleteAppointment(props.appointment._id) }}
+    <a href="#" onClick={() => { props.deleteTemp(props.temp._id) }}
    class="btn btn-danger" id="delete">
       <i class="fas fa-trash-alt">&nbsp;Delete</i></a>
 </td>
   </tr>
 );
 
-export default class AppointmentsList extends Component {
+export default class TempList extends Component {
   constructor(props) {
     super(props);
     
-    this.deleteAppointment = this.deleteAppointment.bind(this)
+    this.deleteTemp = this.deleteTemp.bind(this)
 
-    this.state = {appointments: []};
+    this.state = {temps: []};
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/appointments/')
+    axios.get('http://localhost:5000/temps/')
       .then(response => {
-        this.setState({ appointments: response.data })
+        this.setState({ temps: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
   }
 
-  deleteAppointment(id) {
-    axios.delete('http://localhost:5000/appointments/'+id)
+  deleteTemp(id) {
+    axios.delete('http://localhost:5000/temps/'+id)
     .then(() => {
       alert("Temporary Allocation Deleted")
     }).catch((err)=>{
@@ -61,31 +61,31 @@ export default class AppointmentsList extends Component {
     })
 
     this.setState({
-        appointments: this.state.appointments.filter(el => el._id !== id)
+      temps: this.state.temps.filter(el => el._id !== id)
     })
   }
 
-  appointmentList() {
-    return this.state.appointments.map(currentappointment => {
-      return <Appointment appointment={currentappointment} deleteAppointment={this.deleteAppointment} key={currentappointment._id}/>;
+  tempList() {
+    return this.state.temps.map(currenttemp => {
+      return <Temp temp={currenttemp} deleteTemp={this.deleteTemp} key={currenttemp._id}/>;
     })
   }
     
-  filterContent(appointments, searchTerm){
-    const result=appointments.filter((appointment) =>
-    appointment.firstname.includes(searchTerm));
+  filterContent(temps, searchTerm){
+    const result=temps.filter((temp) =>
+    temp.firstname.includes(searchTerm));
   
-  this.setState({appointments: result});
+  this.setState({temps: result});
   }
 
 
 
   handleTextSearch =(e)=>{
     const searchTerm=e.currentTarget.value;
-    axios.get('http://localhost:5000/appointments/')
+    axios.get('http://localhost:5000/temps/')
     .then((res) =>{
  if(res.data.success){
-   this.filterContent(res.data.appointment, searchTerm)
+   this.filterContent(res.data.temp, searchTerm)
  }
    });
   };
@@ -121,7 +121,7 @@ export default class AppointmentsList extends Component {
             </tr>
           </thead>
           <tbody>
-            { this.appointmentList() }
+            { this.tempList() }
             </tbody>
             </table> 
         </table>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
 
-export default class CreateAppointment extends Component {
+export default class CreateTemp extends Component {
   constructor(props) {
     super(props);
     this.onChangeRefno = this.onChangeRefno.bind(this);
@@ -69,7 +69,6 @@ export default class CreateAppointment extends Component {
     })
   }
 
-  
   onChangeName(e) {
     this.setState({
       name: e.target.value
@@ -144,7 +143,7 @@ export default class CreateAppointment extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const appointment = {
+    const temp = {
       refno: this.state.refno,
       fileno: this.state.fileno,
       projcode: this.state.projcode,
@@ -164,9 +163,9 @@ export default class CreateAppointment extends Component {
       
     }
 
-    console.log(appointment);
+    console.log(temp);
 
-    axios.post('http://localhost:5000/appointments/add', appointment)
+    axios.post('http://localhost:5000/temps/add',temp)
     .then(() => {
       alert("Temporary Allocation Added")
     }).catch((err)=>{

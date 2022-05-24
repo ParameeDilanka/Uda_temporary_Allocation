@@ -79,7 +79,7 @@ export default class DetailList extends Component {
       <div>
         <table className="container">
         <table className="table">
-        <table bgcolor="#ddddff" width="100%">
+        <table bgcolor="#ddddff" align="center" width="100%">
           <thead  className="text-gold">
             <tr>
             <th scope="col">Security Deposit and Recipt No</th>

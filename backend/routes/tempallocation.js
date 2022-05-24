@@ -1,9 +1,9 @@
 const router = require('express').Router();
-let Appointment = require('../models/tempallocation');
+let Temp = require('../models/tempallocation');
 
 router.route('/').get((req, res) => {
-  Appointment.find()
-    .then(appointments => res.json(appointments))
+  Temp.find()
+    .then(temps => res.json(temps))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -27,7 +27,7 @@ router.route('/add').post((req, res) => {
   const taxes = req.body.taxes;
   
 
-  const newAppointment = new Appointment({
+  const newTemp = new Temp({
     refno,
     fileno,
     projcode,
@@ -47,48 +47,47 @@ router.route('/add').post((req, res) => {
 
   });
 
-  newAppointment.save()
-  .then(() => res.json('Appointment added!'))
+  newTemp.save()
+  .then(() => res.json('Temporaray Allocation Added!'))
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').get((req, res) => {
-  Appointment.findById(req.params.id)
-  .then(appointment => res.json(appointment))
+  Temp.findById(req.params.id)
+  .then(temp => res.json(temp))
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').delete((req, res) => {
-    Appointment.findByIdAndDelete(req.params.id)
-    .then(() => res.json('Appointment deleted.'))
+    Temp.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Temporary Allocation Deleted.'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 
 router.route('/update/:id').post((req, res) => {
-    Appointment.findById(req.params.id)
-    .then(appointment => {
+    Temp.findById(req.params.id)
+    .then(temp => {
   
-    appointment.refno = req.body.refno;
-    appointment.fileno = req.body.fileno;
-    appointment.projcode = req.body.projcode;
-    appointment.cuscode = req.body.cuscode;
-    appointment.name = req.body.name;
-    appointment.priverteaddr = req.body.priverteaddr;
-    appointment.premisesaddr = req.body.premisesaddr;
-    
-    appointment.extent = req.body.extent;
-    appointment.planno = req.body.planno;
-    appointment.lotno = req.body.lotno;
-    appointment.dateofallocation = req.body.dateofallocation;
-    appointment.handedoverdate = req.body.handedoverdate;
-    appointment.periodofallocation = req.body.periodofallocation;
-    appointment.expdate = req.body.expdate;
-    appointment.rent = req.body.rent;
-    appointment.taxes = req.body.taxes;
+      temp.refno = req.body.refno;
+      temp.fileno = req.body.fileno;
+      temp.projcode = req.body.projcode;
+      temp.cuscode = req.body.cuscode;
+      temp.name = req.body.name;
+      temp.priverteaddr = req.body.priverteaddr;
+      temp.premisesaddr = req.body.premisesaddr;
+      temp.extent = req.body.extent;
+      temp.planno = req.body.planno;
+      temp.lotno = req.body.lotno;
+      temp.dateofallocation = req.body.dateofallocation;
+    temp.handedoverdate = req.body.handedoverdate;
+    temp.periodofallocation = req.body.periodofallocation;
+    temp.expdate = req.body.expdate;
+    temp.rent = req.body.rent;
+    temp.taxes = req.body.taxes;
    
-    appointment.save()
-        .then(() => res.json('Appointment updated!'))
+    temp.save()
+        .then(() => res.json('Temporary Allocation Updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
     })
     .catch(err => res.status(400).json('Error: ' + err));

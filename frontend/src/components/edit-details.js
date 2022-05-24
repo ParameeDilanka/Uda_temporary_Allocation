@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
-
 export default class EditDetail extends Component {
   constructor(props) {
     super(props);
@@ -207,8 +206,6 @@ export default class EditDetail extends Component {
     })
 window.location = '/detaillist';
   }
-
-  
   render() {
     return (
     <div>

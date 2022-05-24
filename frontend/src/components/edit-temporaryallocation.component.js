@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
-
-
-export default class EditAppointment extends Component {
+export default class EditTemp extends Component {
   constructor(props) {
     super(props);
     this.onChangeRefno = this.onChangeRefno.bind(this);
@@ -46,7 +44,7 @@ export default class EditAppointment extends Component {
   }   
 
   componentDidMount() {
-    axios.get('http://localhost:5000/appointments/'+this.props.match.params.id)
+    axios.get('http://localhost:5000/temps/'+this.props.match.params.id)
       .then(response => {
         this.setState({
        refno: response.data.refno,
@@ -169,7 +167,7 @@ export default class EditAppointment extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const appointment = {
+    const temp = {
       refno: this.state.refno,
       fileno: this.state.fileno,
       projcode: this.state.projcode,
@@ -188,9 +186,9 @@ export default class EditAppointment extends Component {
       taxes: this.state.taxes
       
     }
-    console.log(appointment);
+    console.log(temp);
 
-    axios.post('http://localhost:5000/appointments/update/' + this.props.match.params.id, appointment)
+    axios.post('http://localhost:5000/temps/update/' + this.props.match.params.id, temp)
     .then(() => {
       alert("Temporary Allocation Edited")
     }).catch((err)=>{
@@ -199,7 +197,7 @@ export default class EditAppointment extends Component {
   window.location = '/list';
   }
 
-  
+
   render() {
     return (
     <div>
@@ -315,7 +313,7 @@ export default class EditAppointment extends Component {
       
         <div className="form-group"  style={{float:"left"}}> 
           <label>Date Of Allocation: </label>
-          <input  type="text"
+          <input type="text"
             style={{float:"left"}}
               required
               className="form-control"
@@ -323,8 +321,8 @@ export default class EditAppointment extends Component {
               onChange={this.onChangeDateofallocation}
               />
         </div>
-
-        <div className="form-group"  style={{float:"right"}}> 
+        
+      <div className="form-group"  style={{float:"right"}}> 
           <label>Physical Possession Handed Over Date: </label>
           <input  type="text"
             style={{float:"right"}}

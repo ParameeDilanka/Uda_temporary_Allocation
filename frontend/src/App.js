@@ -1,9 +1,9 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route} from "react-router-dom";
-import AppointmentsList from "./components/tempallocationlist";
-import EditAppointment from "./components/edit-temporaryallocation.component";
-import CreateAppointment from "./components/create-temporaryallocation.component";
+import TempList from "./components/tempallocationlist";
+import EditTemp from "./components/edit-temporaryallocation.component";
+import CreateTemp from "./components/create-temporaryallocation.component";
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer';
 import Homepage from './components/Home/Homepage';
@@ -16,10 +16,10 @@ function App() {
             <Header/>
             <Route path="/" exact component={Homepage} />
             <div>
-     <Route path="/list" exact component={AppointmentsList} />
-      <Route path="/edit/:id" component={EditAppointment} />
+     <Route path="/list" exact component={TempList} />
+      <Route path="/edit/:id" component={EditTemp} />
       <Route path="/editd/:id" component={EditDetail} />
-      <Route path="/create" component={CreateAppointment} />
+      <Route path="/create" component={CreateTemp} />
       <Route path="/detail" component={CreateDetail} /> 
       <Route path="/detaillist" component={detailsList} />
       <Footer/>

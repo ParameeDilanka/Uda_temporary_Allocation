@@ -18,9 +18,9 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-const appointmentRouter = require('./routes/tempallocation');
+const tempRouter = require('./routes/tempallocation');
 const detailRouter = require('./routes/detail');
-app.use('/appointments', appointmentRouter);
+app.use('/temps', tempRouter);
 app.use('/details', detailRouter);
 
 app.listen(port, () => {

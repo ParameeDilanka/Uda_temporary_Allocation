@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const appointmentSchema = new Schema({
+const tempSchema = new Schema({
   refno: { type: String, required: true },
   fileno: { type: String, required: true },
   projcode: { type: String, required: true },
@@ -24,6 +24,6 @@ const appointmentSchema = new Schema({
 }
 );
 
-const Appointment = mongoose.model('Appointment', appointmentSchema);
+const Temp = mongoose.model('Temp', tempSchema);
 
-module.exports = Appointment;
+module.exports = Temp;

@@ -358,10 +358,10 @@ export default class CreateDetail extends Component {
               />
         </div>
 
-        <div className="form-group"  style={{float:"right"}}> 
+        <div className="form-group"  style={{float:"left"}}> 
           <label>Tenth Renewed Value and Period: </label>
           <input  type="text"
-            style={{float:"right"}}
+            style={{float:"left"}}
               required
               className="form-control"
               value={this.state.tenth}
