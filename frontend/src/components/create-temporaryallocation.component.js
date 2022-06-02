@@ -23,7 +23,7 @@ export default class CreateTemp extends Component {
     this.onChangeTaxes = this.onChangeTaxes.bind(this);
 
     this.onSubmit = this.onSubmit.bind(this);
-
+    
     this.state = {
       refno:'',
       fileno:'',
@@ -341,8 +341,7 @@ export default class CreateTemp extends Component {
               value={this.state.rent}
               onChange={this.onChangeRent}
               />
-        </div>
-        
+        </div>     
         <div className="form-group"  style={{float:"right"}}> 
           <label>Taxes: </label>
           <input  type="text"

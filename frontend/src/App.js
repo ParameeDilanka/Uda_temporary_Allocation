@@ -1,6 +1,6 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 import TempList from "./components/tempallocationlist";
 import EditTemp from "./components/edit-temporaryallocation.component";
 import CreateTemp from "./components/create-temporaryallocation.component";

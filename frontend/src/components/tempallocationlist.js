@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const Temp = props => (
   <tr>
-
     <td>{props.temp.refno}</td>
     <td>{props.temp.fileno}</td>
     <td>{props.temp.projcode}</td>

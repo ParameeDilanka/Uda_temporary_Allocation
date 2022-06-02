@@ -20,6 +20,7 @@ connection.once('open', () => {
 
 const tempRouter = require('./routes/tempallocation');
 const detailRouter = require('./routes/detail');
+
 app.use('/temps', tempRouter);
 app.use('/details', detailRouter);
 
