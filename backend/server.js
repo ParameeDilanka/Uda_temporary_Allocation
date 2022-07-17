@@ -23,7 +23,7 @@ const detailRouter = require('./routes/detail');
 
 app.use('/temps', tempRouter);
 app.use('/details', detailRouter);
-app.use('/users' , require('./routes/usersRoute'));
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
