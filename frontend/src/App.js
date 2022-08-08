@@ -16,12 +16,12 @@ function App() {
             <Header/>
             <Route path="/" exact component={Homepage} />
             <div>
-      <Route path="/list" exact component={TempList} />
-      <Route path="/edit/:id" component={EditTemp} />
+          <  Route path="/create" component={CreateTemp} />
+          <Route path="/list" exact component={TempList}/>
+          <Route path="/edit/:id" component={EditTemp} />
       <Route path="/editd/:id" component={EditDetail} />
-      <Route path="/create" component={CreateTemp} />
       <Route path="/detail" component={CreateDetail} /> 
-      <Route path="/detaillist" component={detailsList} />
+      <Route path="/detaillist" component={detailsList} /> 
     
       <Footer/>
      </div>

@@ -210,7 +210,7 @@ window.location = '/detaillist';
     return (
     <div>
       <center>
-      <h3>Create Temporary Allocation</h3><br></br>
+      <h3>Edit Details</h3><br></br>
       </center>
       <center>
       <form  className="form1"onSubmit={this.onSubmit} >
@@ -398,7 +398,7 @@ window.location = '/detaillist';
         </div>
         </div>
         <div className="form-group">
-        <input type ='submit' value='Create' name='Create' className="form-control btn btn-primary" style = {{marginTop:"30px"}}/>
+        <input type ='submit' value='Edit' name='Edit' className="form-control btn btn-primary" style = {{marginTop:"30px"}}/>
         </div>
      </form>
      </center>

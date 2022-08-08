@@ -182,7 +182,7 @@ export default class CreateDetail extends Component {
     return (
     <div>
       <center>
-      <h3>Create Temporary Allocation</h3><br></br>
+      <h3>Create Details</h3><br></br>
       </center>
       <center>
       <form  className="form1"onSubmit={this.onSubmit} >
@@ -265,7 +265,7 @@ export default class CreateDetail extends Component {
           <label>First Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"right"}}
-              required
+             
               className="form-control"
               value={this.state.first}
               onChange={this.onChangeFirst}
@@ -285,7 +285,7 @@ export default class CreateDetail extends Component {
           <label>Third Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"right"}}
-              required
+              
               className="form-control"
               value={this.state.third}
               onChange={this.onChangeThird}
@@ -296,7 +296,7 @@ export default class CreateDetail extends Component {
           <label>Fourth Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"left"}}
-              required
+           
               className="form-control"
               value={this.state.fourth}
               onChange={this.onChangeFourth}
@@ -307,7 +307,7 @@ export default class CreateDetail extends Component {
           <label>Fifth Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"right"}}
-              required
+              
               className="form-control"
               value={this.state.fifth}
               onChange={this.onChangeFifth}
@@ -318,7 +318,7 @@ export default class CreateDetail extends Component {
           <label>sixth Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"left"}}
-              required
+            
               className="form-control"
               value={this.state.sixth}
               onChange={this.onChangeSixth}
@@ -329,7 +329,7 @@ export default class CreateDetail extends Component {
           <label>Seventh Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"right"}}
-              required
+        
               className="form-control"
               value={this.state.seventh}
               onChange={this.onChangeSeventh}
@@ -340,7 +340,7 @@ export default class CreateDetail extends Component {
           <label>Eightth Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"left"}}
-              required
+              
               className="form-control"
               value={this.state.eightth}
               onChange={this.onChangeEightth}
@@ -351,7 +351,7 @@ export default class CreateDetail extends Component {
           <label>Nineth Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"right"}}
-              required
+         
               className="form-control"
               value={this.state.nineth}
               onChange={this.onChangeNineth}
@@ -362,7 +362,6 @@ export default class CreateDetail extends Component {
           <label>Tenth Renewed Value and Period: </label>
           <input  type="text"
             style={{float:"left"}}
-              required
               className="form-control"
               value={this.state.tenth}
               onChange={this.onChangeTenth}
