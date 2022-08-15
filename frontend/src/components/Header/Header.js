@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
 import "./header.css"
-
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 function Header() {
     const auth = useSelector(state => state.auth)
 
@@ -25,10 +26,16 @@ function Header() {
             <Link to="#" className="avatar">
             <img src={user.avatar} alt=""/> {user.name} <i className="fas fa-angle-down"></i>
             </Link>
-            <ul className="dropdown">
+            {/* <ul className="dropdown">
                 <li><Link to="/profile">Profile</Link></li>
                 <li><Link to="/" onClick={handleLogout}>Logout</Link></li>
-            </ul>
+            </ul> */}
+
+            <DropdownButton id="dropdown-basic-button" title="">
+            <Dropdown.Item href="/profile">Profile</Dropdown.Item>
+      <Dropdown.Item href="/" onClick={handleLogout}>Logout</Dropdown.Item>
+    </DropdownButton>
+
         </li>
     }
 
@@ -42,11 +49,7 @@ function Header() {
                 <h1>Urban Development Authority</h1>
             </div>
 
-            <ul style={transForm}>
-            <li><Link to="/detail">  Details</Link></li>
-            <li><Link to="/detaillist"> Details List</Link></li>
-            <li><Link to="/create"> Temporary Allocation</Link></li>
-            <li><Link to="/list"> Temporary Allocation List</Link></li>       
+            <ul style={transForm}>      
                 {
                     isLogged
                     ? userLink()

@@ -39,11 +39,11 @@ const sendEmail = (to, url, txt) => {
     const mailOptions = {
         from: SENDER_EMAIL_ADDRESS,
         to: to,
-        subject: "C4 ✮ FITNESS",
+        subject: "Temporary Allocation",
         html: `
             <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
-            <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to the C4 ✮ FITNESS.</h2>
-            <p>Congratulations! You're almost set to start using C4 ✮ FITNESS.
+            <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to the Temporary Allocation.</h2>
+            <p>Congratulations! You're almost set to start using Temporary Allocation.
                 Just click the button below to validate your email address.
             </p>
             

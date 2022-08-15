@@ -5,7 +5,6 @@ import TempList from "./components/tempallocationlist";
 import EditTemp from "./components/edit-temporaryallocation.component";
 import CreateTemp from "./components/create-temporaryallocation.component";
 import Header from './components/header/Header';
-import Headers from './components/headers/Header';
 import Footer from './components/Footer/Footer';
 import Homepage from './components/Home/Homepage';
 import CreateDetail from './components/createdetail';
@@ -15,7 +14,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {dispatchLogin, fetchUser, dispatchGetUser} from './redux/actions/authAction';
 import Body from './components/body/Body';
 import axios from 'axios';
-
+import SideBar from './components/Sidebar/sidebar';
 
 function App() {
   const dispatch = useDispatch()
@@ -48,21 +47,10 @@ function App() {
 
   return (
  <Router>
-  
-      <div>
-      <Headers/>
-      <Route path="/" exact component={Homepage} />
-      </div>
-
-      <Header/>
-      <Route path="/create" component={CreateTemp} />
-      <Route path="/list" exact component={TempList}/>
-      <Route path="/edit/:id" component={EditTemp} />
-      <Route path="/editd/:id" component={EditDetail} />
-      <Route path="/detail" component={CreateDetail} /> 
-      <Route path="/detaillist" component={detailsList} /> 
+     <Header/>
+      <SideBar />
       <div className="App">
-        <Body />
+      <Body />
       </div>
       <Footer/>
     </Router>
