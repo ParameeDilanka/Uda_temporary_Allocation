@@ -49,9 +49,14 @@ function App() {
  <Router>
      <Header/>
       <SideBar />
-      <div className="App">
+      <Route path="/" exact component={Homepage}/>
+      <Route path="/create" component={CreateTemp} exact />
+      <Route path="/list"  component={TempList} exact  />
+      <Route path="/edit/:id" component={EditTemp} exact />
+      <Route path="/editd/:id" component={EditDetail} exact />
+      <Route path="/detail" component={CreateDetail} exact /> 
+      <Route path="/detaillist" component={detailsList} exact/>
       <Body />
-      </div>
       <Footer/>
     </Router>
   );
