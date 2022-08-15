@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux'
 import axios from 'axios'
 import "./header.css"
 
-function Header() {
+function Headers() {
     const auth = useSelector(state => state.auth)
 
     const {user, isLogged} = auth
@@ -43,10 +43,7 @@ function Header() {
             </div>
 
             <ul style={transForm}>
-            <li><Link to="/detail">  Details</Link></li>
-            <li><Link to="/detaillist"> Details List</Link></li>
-            <li><Link to="/create"> Temporary Allocation</Link></li>
-            <li><Link to="/list"> Temporary Allocation List</Link></li>       
+              
                 {
                     isLogged
                     ? userLink()
@@ -58,4 +55,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Headers

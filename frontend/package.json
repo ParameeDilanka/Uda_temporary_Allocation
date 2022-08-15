@@ -33,7 +33,11 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "axios": "^0.20.0",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.2.2",
+    "redux": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -63,5 +67,6 @@
     "axios": "^0.21.4",
     "file-saver": "^2.0.5",
     "xlsx": "^0.17.1"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
